@@ -47,6 +47,7 @@
 
   <script src='js/jquery-3.0.0.js' charset="utf-8"></script>
   <script src='js/bootstrap.js' charset="utf-8"></script>
+  <script src='js/jquery.simpleWeather.js' charset="utf-8"></script>
   <script type= 'text/javascript'charset="utf-8">
     $(document).ready(function(){
       var date = new Date();
@@ -79,7 +80,7 @@
         $(img).css('height', '10%');
         }
 
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?zip=94040,us",function(result){
+        $.getJSON("http://api.openweathermap.org/data/2.5/weather?zip=94040,us&APPID=2ed45ee98c09091b065f8ee982691ece",function(result){
         var message = ("Weather: " + result.weather[0].main);
         $('#temp').append(message);
         });
