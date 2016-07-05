@@ -198,11 +198,12 @@ body {
   right:20%;
   top:20%;
 }
-
+#weather ul{
+  list-style-type:none;
+}
 #weather li {
   background: #fff;
   background: rgba(255,255,255,0.90);
-  padding: 20px;
-  display: inline-block;
+  padding: 1em;
   border-radius: 0.5em;
 }
