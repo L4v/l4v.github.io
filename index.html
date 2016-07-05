@@ -101,7 +101,7 @@
             success: function(weather){
             /*  html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</p>';
               html += '<p>'+weather.city+', ' + ''+weather.currently+'</p>';*/
-              html = '<p>It\'s currently '+weather.currently+' at '+weather.demp+'&deg'+weather.units.temp+' in '+weather.city+'</p>';
+              html = '<p>It\'s currently '+weather.currently+' at '+weather.temp+'&deg'+weather.units.temp+' in '+weather.city+'</p>';
 
               $('#weather').html(html);
 
