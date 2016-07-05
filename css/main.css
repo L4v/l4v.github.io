@@ -202,8 +202,7 @@ body {
   list-style-type:none;
 }
 #weather li {
-  background: #fff;
-  background: rgba(255,255,255,0.90);
+  position:relative;
   padding: 1em;
   border-radius: 0.5em;
 }
