@@ -9,11 +9,11 @@
   <body>
     <div class="site-wrapper">
 
-      <div class="weather-container">
+      <!--<div class="weather-container">
         <p id = 'weather'>
 
         </p>
-      </div>
+      </div>-->
 
          <div class="site-wrapper-inner">
 
@@ -25,7 +25,7 @@
              </div>
 
              <div class="inner cover">
-               <h1 class="cover-heading" id = 'welcome'></h1>
+               <h1 class="cover-heading" id = 'welcome'></h1><h1 id = 'weather'></h1>
                <p class="lead"></p>
                <p class="lead" id = 'fang'>
                  <!--<a href="#" class="btn btn-lg btn-default">Learn more</a>
@@ -100,8 +100,8 @@
             unit: 'c',
             success: function(weather){
               html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-              html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-              html += '<li class="currently">'+weather.currently+'</li>';
+              html += ', '+weather.city+', '+weather.region+'';
+              html += ', '+weather.currently+'';
 
               $('#weather').html(html);
 
