@@ -100,8 +100,8 @@
             unit: 'c',
             success: function(weather){
               html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</p>';
-              html += '<p>'+weather.city+'</p>, ';
-              html += '<p>'+weather.currently+'</p>';
+              html += '<p>'+weather.city+', ';
+              html += ''+weather.currently+'</p>';
 
               $('#weather').html(html);
 
