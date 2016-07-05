@@ -10,7 +10,7 @@
     <div class="site-wrapper">
 
       <div class="weather-container">
-        <p id = 'temp'>
+        <p id = 'weather'>
 
         </p>
       </div>
@@ -50,12 +50,15 @@
   <script src='js/jquery.simpleWeather.js' charset="utf-8"></script>
   <script type= 'text/javascript'charset="utf-8">
     $(document).ready(function(){
-      var date = new Date();
-      var hour = date.getHours();
-      var header = document.getElementById('welcome');
-      var p = document.getElementById('fang');
-      var img = document.createElement('img');
-      img.src = 'img/fangs.png';
+      //Variables
+        var date = new Date();
+        var hour = date.getHours();
+        var header = document.getElementById('welcome');
+        var p = document.getElementById('fang');
+        var img = document.createElement('img');
+        img.src = 'img/fangs.png';
+
+        //Time of day
 
       if(hour >= 6 && hour < 10){
         document.body.className = 'morning';
@@ -80,10 +83,39 @@
         $(img).css('height', '10%');
         }
 
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?zip=94040,us&APPID=2ed45ee98c09091b065f8ee982691ece",function(result){
+        //Weather
+
+            loadWeather('','');
+          //Load geolocation
+            navigator.geolocation.getCurrentPosition(function(position){
+            loadWeather(position.coords.latitude+','+position.coords.longitude);
+          });
+
+
+        function loadWeather(location, woeid){
+          $.simpleWeather({
+            location: location,
+            woeid: woeid,
+            unit: 'c',
+            success: function(weather){
+              html = '<h2><i class="icon-'+weather.code+'"></i>' + weather.temp+'$deg;'+weather.units.temp+'<h2>';
+              html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+              html += '<li class="currently">'+weather.currently+'</li>';
+
+              $('#weather').html(html);
+
+            },
+            error: function(error){
+              $('#weather').html('<p>'+error+'</p>');
+            }
+          });
+        };
+
+        /*$.getJSON("http://api.openweathermap.org/data/2.5/weather?zip=94040,us&APPID=2ed45ee98c09091b065f8ee982691ece",function(result){
         var message = ("Weather: " + result.weather[0].main);
         $('#temp').append(message);
         });
+        */
     });
   </script>
   </body>
