@@ -1,0 +1,45 @@
+body
+{
+    background-color: #fafafa;
+    padding: 0;
+    margin: 0 auto;
+    width: 50vw;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: serif;
+    color: #212121;
+}
+
+p
+{
+    font-family: monospace;
+}
+
+article
+{
+    min-height: 200px;
+}
+
+#header
+{
+    border-bottom: 1px solid;
+    border-height: 1px;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+#footer
+{
+    text-align: center;
+}
+
+
+
+.sticky
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

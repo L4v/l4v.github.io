@@ -1,123 +1,49 @@
-<html>
-  <head>
-    <title>Homepage</title>
-    <link rel="stylesheet" href="css/bootstrap-theme.css" charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
-    <!--Credit for icons goes to Freepik @ flaticon.com-->
-  </head>
-  <body>
-    <div class="site-wrapper">
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kofi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-      <!--<div class="weather-container">
-        <p id = 'weather'>
+<body>
 
-        </p>
-      </div>-->
+    <!-- Header -->
+    <div id="header">
+        <h1>Kofi</h1>
+    </div>
 
-         <div class="site-wrapper-inner">
+    <!-- Left sidebar -->
+    <div id="left-sidebar">
+    </div>
 
-           <div class="cover-container">
+    <!-- Main content -->
+    <div id="content">
+        <article>
+            <h2>Prvi artikl</h2>
+            <p>Ovo je prvi article ili sta vec</p>
+        </article>
+        
+        <article>
+            <h2>Drugi artikl</h2>
+            <p>Ovo je drugi article ili sta vec</p>
+        </article>
 
-             <div class="masthead clearfix">
-               <div class="inner">
-               </div>
-             </div>
+        <article>
+            <h2>Treci artikl</h2>
+            <p>Ovo je treci article ili sta vec</p>
+        </article>
+    </div>
 
-             <div class="inner cover">
-               <h1 class="cover-heading" id = 'welcome'></h1><p id = 'weather'></p>
-               <p class="lead"></p>
-               <p class="lead" id = 'fang'>
-                 <!--<a href="#" class="btn btn-lg btn-default">Learn more</a>
-                 <img src="img/fangs.png" alt="" height='10%' width='10%' />-->
-               </p>
-               <script src="https://www.reddit.com/hot/.embed?limit=8&t=all&twocolumn=true" type="text/javascript"></script>
-             </div>
-
-             <div class="mastfoot">
-               <div class="inner">
-               </div>
-             </div>
-
-           </div>
-
-         </div>
-
-       </div>
-
-  <script src='js/jquery-3.0.0.js' charset="utf-8"></script>
-  <script src='js/bootstrap.js' charset="utf-8"></script>
-  <script src='js/jquery.simpleWeather.js' charset="utf-8"></script>
-  <script type= 'text/javascript'charset="utf-8">
-    $(document).ready(function(){
-      //Variables
-        var date = new Date();
-        var hour = date.getHours();
-        var header = document.getElementById('welcome');
-        var p = document.getElementById('fang');
-        var img = document.createElement('img');
-        var deg = '°';
-        img.src = 'img/fangs.png';
-
-        //Time of day
-
-      if(hour >= 6 && hour < 10){
-        document.body.className = 'morning';
-        header.innerHTML='Good morning!';
-        }
-      if(hour >= 10 && hour < 18){
-        document.body.className = 'afternoon';
-        header.innerHTML="Good afternoon!";
-        }
-      if(hour >= 18 && hour < 22){
-        document.body.className = 'evening';
-        header.innerHTML='Good evening!';
-        $('#fang').append(img);
-        $(img).css('width', '10%');
-        $(img).css('height', '10%');
-        }
-      if(hour >= 22 || hour >= 0 && hour < 6){
-        document.body.className = 'night';
-        header.innerHTML= 'The night is young!';
-        $('#fang').append(img);
-        $(img).css('width', '10%');
-        $(img).css('height', '10%');
-        }
-
-        //Weather
-
-            loadWeather('','');
-          //Load geolocation
-            navigator.geolocation.getCurrentPosition(function(position){
-            loadWeather(position.coords.latitude+','+position.coords.longitude);
-          });
-
-
-        function loadWeather(location, woeid){
-          $.simpleWeather({
-            location: location,
-            woeid: woeid,
-            unit: 'c',
-            success: function(weather){
-            /*  html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</p>';
-              html += '<p>'+weather.city+', ' + ''+weather.currently+'</p>';*/
-              html = '<p>It\'s currently '+weather.currently+' at '+weather.temp+'&deg'+weather.units.temp+' in '+weather.city+'</p>';
-
-              $('#weather').html(html);
-
-            },
-            error: function(error){
-              $('#weather').html('<p>'+error+'</p>');
-            }
-          });
-        };
-
-        /*$.getJSON("http://api.openweathermap.org/data/2.5/weather?zip=94040,us&APPID=2ed45ee98c09091b065f8ee982691ece",function(result){
-        var message = ("Weather: " + result.weather[0].main);
-        $('#temp').append(message);
-        });
-        */
-    });
-  </script>
-  </body>
+    <!-- Right sidebar -->
+    <div id="right-sidebar">
+    </div>
+    
+    <!-- Footer -->
+    <div id="footer">
+        <h3>Footer stvari?</h3>
+    </div>
+    <!-- TODO(Jovan): sticky navbar
+    <script src="scrollnav.js"></script>
+    -->
+</body>
 </html>
