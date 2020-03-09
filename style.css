@@ -2,8 +2,7 @@ body
 {
     background-color: #fafafa;
     padding: 0;
-    margin: 0 auto;
-    width: 50vw;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -19,7 +18,29 @@ p
 
 article
 {
-    min-height: 200px;
+    border: 1px solid; /* TODO(Jovan): Testing */
+    min-height: 50vh;
+    margin: 2px;
+}
+
+article .article-header h2, h3
+{
+    padding: 0;
+    margin: 0;
+}
+article .article-header
+{
+    margin: 2% 0 0 2%;
+}
+
+article .article-header h3
+{
+   color: #909090;
+   font-size: 0.5em; 
+}
+article p
+{
+    padding: 2%;
 }
 
 #header
@@ -28,6 +49,16 @@ article
     border-height: 1px;
     text-align: center;
     background-color: #fafafa;
+    margin: 0 auto;
+    width: 50vw;
+}
+
+#content
+{
+    background-color: #fafafa;
+    padding: 0;
+    margin: 0 auto;
+    width: 50vw;
 }
 
 #footer
@@ -41,5 +72,5 @@ article
 {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100% !important;
 }
