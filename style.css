@@ -46,27 +46,39 @@ article p
 
 #header
 {
-    border-bottom: 1px solid;
-    border-height: 1px;
     text-align: center;
     background-color: #fafafa;
     margin: 0 auto;
     width: 50vw;
+}
+
+#left-sidebar, #right-sidebar
+{
+    float: left;
+    width: 25%;
 }
 
 #content
 {
     background-color: #fafafa;
-    padding: 0;
-    margin: 0 auto;
-    width: 50vw;
+    float: left;
+    width: 50%;
+}
+
+@media screen and (max-width: 800px)
+{
+    #left-sidebar, #right-sidebar, #content
+    {
+        width: 100%;
+    }
 }
 
 #footer
 {
     text-align: center;
+    float: left;
+    width: 100%;
 }
-
 
 
 .sticky
@@ -74,4 +86,6 @@ article p
     position: fixed;
     top: 0;
     width: 100% !important;
+    border-bottom: 1px solid;
+    border-height: 1px;
 }
