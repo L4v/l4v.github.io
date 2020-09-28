@@ -10,14 +10,6 @@ class Ray{
         this.dir.normalize();
     }
 
-    show(){
-        stroke(255);
-        push();
-        translate(this.pos.x, this.pos.y);
-        line(0, 0, this.dir.x * 10, this.dir.y * 10);
-        pop();
-    }
-
     cast(wall){
         const x1 = wall.a.x;
         const y1 = wall.a.y;
