@@ -2,7 +2,7 @@ let walls = [];
 let particle;
 
 function setup(){
-    createCanvas(400, 400);
+    createCanvas(windowWidth, windowHeight);
     for(let i = 0; i < 5; ++i){
         let x1 = random(width);
         let x2 = random(width);
@@ -18,6 +18,10 @@ function setup(){
     walls.push(new Wall(0, height, 0, 0));
 
     particle = new Particle();
+}
+
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw(){
